@@ -5,6 +5,8 @@ RelationshipCapital::Application.routes.draw do
   root 'home_pages#home'
   match '/home', to: 'home_pages#home', via: 'get'
   match '/help', to: 'home_pages#help', via: 'get'
+  match '/newuser', to: 'users#new', via: 'get'
+  match '/signin', to: 'users#sign_in', via: 'get'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
