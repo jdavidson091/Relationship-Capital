@@ -1,4 +1,7 @@
 RelationshipCapital::Application.routes.draw do
+  get "users/new"
+  get "users/sign_in"
+  get "users/sign_out"
   root 'home_pages#home'
   match '/home', to: 'home_pages#home', via: 'get'
   match '/help', to: 'home_pages#help', via: 'get'
