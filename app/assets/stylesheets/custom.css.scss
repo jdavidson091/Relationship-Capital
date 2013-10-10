@@ -1,8 +1,10 @@
-@import "bootstrap";
 
 /* sass variables */
-$lightGray: #999;
+$grayLight: #999;
 $grayMediumLight: #eaeaea;
+$redLight: #FF4747;
+
+@import "bootstrap";
 
 /* universal */
 
@@ -49,7 +51,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $lightGray;
+  color: $grayLight;
 }
 
 p {
@@ -64,15 +66,30 @@ p {
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: -1px;
   padding-top: 9px;
+  padding-bottom: 5px;
   font-weight: bold;
   line-height: 1;
 }
 
 #logo:hover {
-  color: #fff;
+  color: $redLight;
+  text-decoration: none;
+}
+
+#sign_in {
+  float: left;
+  font-size: 1em;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  font-weight: normal;
+}
+
+#sign_in:hover {
+  color: $redLight;
   text-decoration: none;
 }
 
@@ -82,7 +99,7 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: $lightGray;
+  color: $grayLight;
   a {
     color: #555;
     &:hover {
