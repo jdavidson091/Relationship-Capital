@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7c14846-d47e-420b-bace-c9edad531861" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RelationshipCapital.iws" />
@@ -12,10 +11,10 @@
     <file path="/application_helper.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381284004948" ignored="false" />
     <file path="/_shim.html.erb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381284457852" ignored="false" />
     <file path="/application.html.erb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381284540814" ignored="false" />
-    <file path="/routes.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381785190893" ignored="false" />
+    <file path="/routes.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382127521955" ignored="false" />
     <file path="/_header.html.erb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381654962194" ignored="false" />
     <file path="/_footer.html.erb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381615811435" ignored="false" />
-    <file path="/Dummy.txt" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381866844899" ignored="false" />
+    <file path="/Dummy.txt" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382218405840" ignored="false" />
     <file path="/help.html.erb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381358517575" ignored="false" />
     <file path="/custom.css.scss" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381785133008" ignored="false" />
     <file path="/application.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381367458686" ignored="false" />
@@ -37,9 +36,9 @@
     <file path="$PROJECT_DIR$/../DavidsonPersonalWebsite/config/application.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381619545315" ignored="false" />
     <file path="/_header_dropdown.html.erb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381705850823" ignored="false" />
     <file path="/Gemfile" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381784283479" ignored="false" />
-    <file path="$PROJECT_DIR$/../sample_app/spec/models/user_spec.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381727783655" ignored="false" />
-    <file path="$PROJECT_DIR$/../sample_app/db/schema.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381727783655" ignored="false" />
-    <file path="$PROJECT_DIR$/../sample_app/app/models/user.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381727783655" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/spec/models/user_spec.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382147231188" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/db/schema.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382147231188" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/app/models/user.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382147231187" ignored="false" />
     <file path="/user.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381727245513" ignored="false" />
     <file path="$PROJECT_DIR$/../sample_app/db/migrate/20131013004857_create_users.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381715492930" ignored="false" />
     <file path="/user_spec.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381726971121" ignored="false" />
@@ -48,18 +47,30 @@
     <file path="$PROJECT_DIR$/../sample_app/db/migrate/20131014042639_add_password_digest_to_users.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381727783655" ignored="false" />
     <file path="$PROJECT_DIR$/../sample_app/app/views/layouts/application.html.erb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381735914802" ignored="false" />
     <file path="$PROJECT_DIR$/../sample_app/app/assets/stylesheets/custom.css.scss" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381735914801" ignored="false" />
-    <file path="$PROJECT_DIR$/../sample_app/config/routes.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381735914802" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/config/routes.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382145380610" ignored="false" />
     <file path="$PROJECT_DIR$/../sample_app/app/views/users/show.html.erb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381735914802" ignored="false" />
-    <file path="$PROJECT_DIR$/../sample_app/app/controllers/users_controller.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381735914801" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/app/controllers/users_controller.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382147231187" ignored="false" />
     <file path="/users_controller.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381735682183" ignored="false" />
     <file path="$PROJECT_DIR$/../sample_app/spec/factories.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381735914802" ignored="false" />
-    <file path="$PROJECT_DIR$/../sample_app/spec/requests/user_pages_spec.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381735914801" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/spec/requests/user_pages_spec.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382147231187" ignored="false" />
     <file path="/factories.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381731360870" ignored="false" />
     <file path="$PROJECT_DIR$/../sample_app/config/environments/test.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381735914802" ignored="false" />
     <file path="$PROJECT_DIR$/../sample_app/app/helpers/users_helper.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381735914801" ignored="false" />
     <file path="$PROJECT_DIR$/../sample_app/app/views/users/new.html.erb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381735914802" ignored="false" />
     <file path="$PROJECT_DIR$/../sample_app/app/views/shared/_error_messages.html.erb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381735914801" ignored="false" />
     <file path="$PROJECT_DIR$/../sample_app/config/environments/production.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1381735946355" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/spec/requests/authentication_pages_spec.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382147231188" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/app/controllers/sessions_controller.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382147231187" ignored="false" />
+    <file path="/sessions_controller.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382132803473" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/app/views/sessions/new.html.erb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382134019383" ignored="false" />
+    <file path="/authentication_pages_spec.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382144496465" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/app/controllers/application_controller.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382134012669" ignored="false" />
+    <file path="/application_controller.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382133358870" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/db/migrate/20131018220639_add_remember_token_to_users.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382147231187" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/app/helpers/sessions_helper.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382147231187" ignored="false" />
+    <file path="/sessions_helper.rb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382143089472" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/app/views/layouts/_header.html.erb" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382147231187" ignored="false" />
+    <file path="$PROJECT_DIR$/../sample_app/app/assets/javascripts/application.js" changelist="d7c14846-d47e-420b-bace-c9edad531861" time="1382147231187" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,16 +102,25 @@
       <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="5.625">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_header.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_header.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="35" selection-start="878" selection-end="878" vertical-scroll-proportion="0.6302817">
+            <state line="12" column="113" selection-start="585" selection-end="585" vertical-scroll-proportion="-7.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -160,15 +180,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_error_messages.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/shared/_error_messages.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -214,9 +225,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="667" />
+    <option name="x" value="370" />
     <option name="y" value="24" />
-    <option name="width" value="699" />
+    <option name="width" value="996" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -245,6 +256,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -449,19 +462,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sample_app" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Rails.Development: RelationshipCapital">
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
@@ -734,18 +745,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="667" y="24" width="699" height="744" extended-state="0" />
+    <frame x="370" y="24" width="996" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2780338" sideWeight="0.76094276" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2035865" sideWeight="0.76094276" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23905724" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23757765" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -819,32 +830,19 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/bundle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/rails">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/_error_messages.html.erb">
@@ -863,9 +861,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environment.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/boot.rb">
@@ -877,9 +873,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="3" selection-start="514" selection-end="514" vertical-scroll-proportion="0.55714285">
-          <folding />
-        </state>
+        <state line="13" column="3" selection-start="514" selection-end="514" vertical-scroll-proportion="0.55714285" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/helpers/home_pages_helper_spec.rb">
@@ -919,14 +913,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="5.625">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="35" selection-start="878" selection-end="878" vertical-scroll-proportion="0.6302817">
+        <state line="12" column="113" selection-start="585" selection-end="585" vertical-scroll-proportion="-7.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
