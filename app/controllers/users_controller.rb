@@ -18,12 +18,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def sign_in
-  end
-
-  def sign_out
-  end
-
   private
   def user_params
     params.require(:user).permit(:name, :email, :password,
