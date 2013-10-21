@@ -1,5 +1,11 @@
 <% provide(:title, @user.name) %>
 <div class="row">
+  <section>
+    <h3>
+      Public View of <%= @user.name %>:
+    </h3>
+  </section>
+  <br>
   <aside class="span4">
     <section>
       <h1>
@@ -7,5 +13,17 @@
         <%= @user.name %>
       </h1>
     </section>
+    <section>
+      <h1>Public information allowed:</h1>
+      <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quam enim, pulvinar nec facilisis sit amet, volutpat ac mi.</h2>
+    </section>
+  </aside>
+  <aside class="span3 offset2">
+    <p>
+      You aren't contacts with <%= @user.name %> yet. Connect with them!
+    </p>
+    <div class="btn">
+      <%= link_to "Connect", "#" %>
+    </div>
   </aside>
 </div>

@@ -1,7 +1,14 @@
 class UsersController < ApplicationController
 
+  # default controller method that's called when
+  # redirect to @user.
+  # Make it so that if the user is signed in, render the homepage.
   def show
     @user = User.find(params[:id])
+
+    if self.current_user == @user
+      render 'home'
+    end
   end
 
   def new
@@ -16,6 +23,10 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def home
+
   end
 
   private
