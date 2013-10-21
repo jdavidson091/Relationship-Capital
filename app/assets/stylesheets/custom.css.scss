@@ -6,14 +6,6 @@ $redLight: #FF4747;
 
 @import "bootstrap";
 
-/* universal */
-
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 html {
   overflow-y: scroll;
 }
@@ -29,6 +21,19 @@ section {
 textarea {
   resize: vertical;
 }
+
+/* inclue responsive bootstrap here so page is mobile friendly */
+@import "bootstrap-responsive";
+
+/* universal */
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
 
 .center {
   text-align: center;
