@@ -12,12 +12,16 @@ class UsersController < ApplicationController
   end
 
   def new
+
     @user = User.new
+
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
+      @user.update_attribute(:rc_score, 0)
+
       sign_in @user
       flash[:success] = "Welcome to the application. Enjoy!"
       redirect_to @user
