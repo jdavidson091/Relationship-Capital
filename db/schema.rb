@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028045352) do
+ActiveRecord::Schema.define(version: 20131028220932) do
+
+  create_table "commitments", force: true do |t|
+    t.integer  "active_user_id"
+    t.integer  "overseer_user_id"
+    t.string   "description"
+    t.datetime "date_made"
+    t.datetime "date_end"
+    t.string   "status"
+    t.integer  "score_weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

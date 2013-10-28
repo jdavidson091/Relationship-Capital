@@ -34,6 +34,10 @@ class UsersController < ApplicationController
 
   end
 
+  def new_commitment
+    @commitment = Commitment.new
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :password,
