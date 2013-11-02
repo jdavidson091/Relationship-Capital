@@ -1,11 +1,14 @@
 RelationshipCapital::Application.routes.draw do
 
   resources :users
+  resources :commitments
   resources :sessions, only: [:new, :create, :destroy]
   root 'home_pages#home'
+  match '/commitments', to: 'home_pages#home', via: 'get'
   match '/home', to: 'home_pages#home', via: 'get'
   match '/help', to: 'home_pages#help', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
+  match '/new_commitment', to: 'users#new_commitment', via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 

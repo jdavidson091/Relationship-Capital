@@ -4,7 +4,37 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@commitment) do |f| %>
-        <%= render 'shared/error_messages' %>
+        <%= render 'shared/commitment_error_messages' %>
+
+
+        <%=
+=begin
+            t.integer  "active_user_id"
+             t.integer  "overseer_user_id"
+             t.string   "description"
+             t.datetime "date_made"
+             t.datetime "date_end"
+             t.string   "status"
+             t.integer  "score_weight"
+             t.datetime "created_at"
+             t.datetime "updated_at"
+=end
+        %>
+        <%= f.label "Who will be the overseer?" %>
+        <%= f.collection_select :overseer_user_id, User.all,
+                                :id, :name %>
+
+        <%= f.label "Description of the Commitment: " %>
+        <%= f.text_field :description %>
+
+        <%= f.label "Pick an end date:" %>
+        <%= f.date_select :date_end, start_year: Time.now.year,
+                          prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }%>
+
+        <%= f.label "Give the commitment a weight:" %>
+        <%= f.select :score_weight, options_for_select([ 5, 10, 15, 20]) %>
+
+        <%= f.submit "Create Commitment", class: "btn btn-large btn-primary" %>
 
     <% end %>
   </div>
