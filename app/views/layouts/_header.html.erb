@@ -6,6 +6,7 @@
       <ul class="nav pull-left">
         <% if signed_in? %>
           <%= render 'layouts/header_dropdown' %>
+          <li><%= link_to "Create Commitment", '/new_commitment' %></li>
         <% else %>
           <li><%= link_to "Sign in", signin_path %></li>
           <li><%= link_to "New user?", signup_path%></li>

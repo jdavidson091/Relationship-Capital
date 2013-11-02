@@ -3,7 +3,9 @@ class CommitmentsController < ApplicationController
     @commitment = Commitment.new(commitment_params)
     @user = current_user
     if @commitment.save
-
+      @commitment.update_attribute(:active_user_id, @user.id)
+      @commitment.update_attribute(:date_made, Time.now)
+      @commitment.update_attribute(:status, "In Progress")
       flash[:success] = "New Commitment Created"
       render 'users/home'
     else
@@ -14,6 +16,6 @@ class CommitmentsController < ApplicationController
   private
   def commitment_params
     params.require(:commitment).permit(:overseer_user_id, :description,
-                                       :date_end, :score_weight)
+                                       :active_user_id, :status, :date_made, :date_end, :score_weight)
   end
 end
