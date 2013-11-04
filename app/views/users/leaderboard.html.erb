@@ -1,0 +1,72 @@
+<div class="row">
+  <aside class="span8">
+    <section>
+      <h1>
+        Top RC Scorers:
+      </h1>
+    </section>
+    <section>
+      <table class="table table-contacts table-condensed table-hover table-striped">
+        <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Score</th>
+          <th>Picture</th>
+          <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>170</td>
+          <td>[pic]</td>
+          <td>John Doe</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>150</td>
+          <td>[pic]</td>
+          <td>Jane Doe</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>110</td>
+          <td>[pic]</td>
+          <td>Tom Hobbes</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>75</td>
+          <td>[pic]</td>
+          <td>Matt Smith</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h1>
+        Your ranking:
+      </h1>
+    </section>
+    <section>
+      <table class="table table-contacts table-condensed table-hover table-striped">
+        <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Score</th>
+          <th>Picture</th>
+          <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>25</td>
+          <td><%= @user.rc_score %></td>
+          <td><%= gravatar_for @user %></td>
+          <td><%= @user.name %></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </aside>
+</div>

@@ -12,9 +12,7 @@ class UsersController < ApplicationController
   end
 
   def new
-
     @user = User.new
-
   end
 
   def create
@@ -38,6 +36,20 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def notifications
+    @user = current_user
+  end
+
+  def admin_home
+    @user = current_user
+    @performed_action = ""
+
+  end
+
+  def leaderboard
+    @user = current_user
+  end
+
   #maybe we should put this in the commitments controller...
   def new_commitment
     @commitment = Commitment.new
@@ -49,6 +61,11 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation)
+  end
+
+  def all_params
+    params.require(:user).permit(:name, :email, :password,
+                                 :rc_score)
   end
 
 end

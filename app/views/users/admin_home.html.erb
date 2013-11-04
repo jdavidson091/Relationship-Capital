@@ -1,0 +1,30 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span12">
+    <section>
+      <h1>Admin Homepage</h1>
+    </section>
+    <section>
+
+      <label class="span4">Select User:</label>
+      <select></select>
+
+    </section>
+    <section>
+      <label>Change email:</label>
+      <input type="text" class = "span4" placeholder = "new email"/>
+    </section>
+    <section>
+      <label>Change password:</label>
+      <input type="text" class = "span4" placeholder = "new password"/>
+    </section>
+    <section>
+      <label>Change score:</label>
+      <input type="text" class = "span4" placeholder = "new score"/>
+    </section>
+    <section>
+      <button class="btn btn-large btn-primary">Update User</button>
+      <button class="btn btn-large btn-danger">Delete User</button>
+    </section>
+  </aside>
+</div>

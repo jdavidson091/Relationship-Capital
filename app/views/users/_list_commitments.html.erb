@@ -1,5 +1,12 @@
 <div class="user-commitments">
   <table class="table table-condensed table-hover table-striped">
+    <div class="col-sm-3 col-md-3 pull-right">
+      <form class="navbar-form" role="search">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search Commitments" name="srch-term" id="srch-term">
+        </div>
+      </form>
+    </div>
     <thead>
       <tr>
         <th>Status</th>
@@ -21,7 +28,7 @@
         <td><%= @user.name %></td>
         <td>Bring TPS reports</td>
         <td>1 Nov 2013</td>
-        <td><%= link_to "Edit", 'commitment/edit' %></td>
+        <td><%= link_to "Edit", '/edit_commitment' %></td>
       </tr>
       <tr>
         <td>In Progress</td>
@@ -31,7 +38,7 @@
         <td><%= @user.name %></td>
         <td>2nd Deliverable, TPS Project</td>
         <td>25 Oct 2013</td>
-        <td><%= link_to "Edit", 'commitment/edit' %></td>
+        <td><%= link_to "Edit", '/edit_commitment' %></td>
       </tr>
       <tr>
         <td>Completed Successfully!</td>
@@ -41,7 +48,7 @@
         <td><%= @user.name %></td>
         <td>Bring expresso!</td>
         <td>19 Oct 2013</td>
-        <td>Completed</td>
+        <td><%= link_to "Complete - Leave Feedback", '/commitment_feedback' %></td>
       </tr>
     </tbody>
   </table>

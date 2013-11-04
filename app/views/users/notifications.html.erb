@@ -1,0 +1,63 @@
+<% provide(:title, "Notifications") %>
+<div class="row">
+  <aside class="span12">
+    <section>
+      <h1>Pending Commitments:</h1>
+    </section>
+    <section>
+      <table class="table table-condensed table-hover table-striped">
+        <thead>
+        <tr>
+          <th>End Date</th>
+          <th>Point Value</th>
+          <th>Overseer User</th>
+          <th>Active User</th>
+          <th>Description</th>
+          <th>Date Created</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>20 Nov 2013</td>
+          <td>15</td>
+          <td>John Calvin</td>
+          <td><%= @user.name %></td>
+          <td>Bring TPS reports</td>
+          <td>1 Nov 2013</td>
+          <td><button class='btn btn-small btn-primary'>Accept</button></td>
+          <td><button class='btn btn-small btn-danger'>Decline</button></td>
+        </tr>
+        <tr>
+          <td>20 Nov 2013</td>
+          <td>5</td>
+          <td>Jane Doe</td>
+          <td><%= @user.name %></td>
+          <td>Fill out Layout</td>
+          <td>1 Nov 2013</td>
+          <td><button class='btn btn-small btn-primary'>Accept</button></td>
+          <td><button class='btn btn-small btn-danger'>Decline</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </aside>
+</div>
+<div class="row">
+  <aside class="span6">
+    <section>
+      <h1>Pending Contact Requests:</h1>
+    </section>
+    <section>
+      <table class="table table-contacts table-condensed table-hover table-striped">
+        <tbody>
+        <tr>
+          <td>[pic]</td>
+          <td>UserName</td>
+          <td><button class='btn btn-small btn-primary'>Accept</button></td>
+          <td><button class='btn btn-small btn-danger'>Decline</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </aside>
+</div>

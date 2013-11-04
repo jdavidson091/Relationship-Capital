@@ -13,6 +13,14 @@ class CommitmentsController < ApplicationController
     end
   end
 
+  def feedback
+
+  end
+
+  def edit
+
+  end
+
   private
   def commitment_params
     params.require(:commitment).permit(:overseer_user_id, :description,
