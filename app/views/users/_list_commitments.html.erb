@@ -2,6 +2,7 @@
   <table class="table table-condensed table-hover table-striped">
     <thead>
       <tr>
+        <th>Status</th>
         <th>End Date</th>
         <th>Point Value</th>
         <th>Overseer User</th>
@@ -13,13 +14,34 @@
     </thead>
     <tbody>
       <tr>
-        <td>Ex. Date</td>
+        <td>Pending acceptance</td>
+        <td>20 Nov 2013</td>
         <td>15</td>
-        <td>OtherUser</td>
+        <td>John Calvin</td>
         <td><%= @user.name %></td>
-        <td>Fake Description</td>
-        <td>Ex. Date</td>
+        <td>Bring TPS reports</td>
+        <td>1 Nov 2013</td>
         <td><%= link_to "Edit", 'commitment/edit' %></td>
+      </tr>
+      <tr>
+        <td>In Progress</td>
+        <td>10 Nov 2013</td>
+        <td>25</td>
+        <td>Thomas Hobbes</td>
+        <td><%= @user.name %></td>
+        <td>2nd Deliverable, TPS Project</td>
+        <td>25 Oct 2013</td>
+        <td><%= link_to "Edit", 'commitment/edit' %></td>
+      </tr>
+      <tr>
+        <td>Completed Successfully!</td>
+        <td>20 Oct 2013</td>
+        <td>5</td>
+        <td>Franz Kafka</td>
+        <td><%= @user.name %></td>
+        <td>Bring expresso!</td>
+        <td>19 Oct 2013</td>
+        <td>Completed</td>
       </tr>
     </tbody>
   </table>

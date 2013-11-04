@@ -34,6 +34,11 @@ class UsersController < ApplicationController
 
   end
 
+  def settings
+    @user = current_user
+  end
+
+  #maybe we should put this in the commitments controller...
   def new_commitment
     @commitment = Commitment.new
     @user = current_user

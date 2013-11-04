@@ -1,0 +1,24 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span7">
+   <h1>User settings for <%= @user.name %></h1>
+  </aside>
+</div>
+<div class="row">
+  <label> Update Password: </label>
+  <input type="text" class = "span4" placeholder = "Current Password"/>
+  <input type="text" class = "span4" placeholder = "New Password"/>
+  <input type="text" class = "span4" placeholder = "New Password Confirmation"/>
+</div>
+<div class="row">
+  <label> Update Email: </label>
+  <input type="text" class = "span4" placeholder = "Current Email"/>
+  <input type="text" class = "span4" placeholder = "New Email"/>
+</div>
+<div class="row">
+  <button class="btn btn-primary">Update User Information</button>
+</div>
+<br>   <br>
+<div class="row">
+  <button class="btn btn-danger">Delete Profile</button>
+</div>
