@@ -3,6 +3,8 @@
 $grayLight: #999;
 $grayMediumLight: #eaeaea;
 $redLight: #FF4747;
+$redVerylight: #fed2da;
+$bluegreenLight: #CCFFCC;
 
 @import "bootstrap";
 
@@ -202,4 +204,22 @@ input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+/* tables */
+
+table {
+  thead th {
+    background-color: $grayMediumLight;
+    font-size: 1.1em;
+  }
+  tbody {
+    td {
+      font-size: .95em;
+    }
+  }
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: $redVerylight;
 }
