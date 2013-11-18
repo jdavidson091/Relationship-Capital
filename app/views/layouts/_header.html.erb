@@ -15,9 +15,12 @@
 
       <ul class="nav pull-right">
         <% if signed_in? %>
-          <li><%= link_to "Notifications", notifications_path %></li>
+          <% if has_notifications? %>
+            <li><%= link_to "Notifications", notifications_path %></li>
+          <% else %>
+            <li><%= link_to "NONotifications", notifications_path %></li>
+          <% end %>
         <% end %>
-
         <div class="col-sm-3 col-md-3 pull-right">
           <form class="navbar-form" role="search">
             <div class="input-group">

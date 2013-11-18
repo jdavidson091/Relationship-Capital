@@ -5,4 +5,16 @@ module UsersHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
+
+  def has_notifications?
+    if Commitment.where("(active_user_id = ? OR overseer_user_id = ?)
+                         AND active_user_id IS NOT NULL
+                         AND overseer_user_id IS NOT NULL
+                         AND status = ?", @user.id, @user.id, "Pending").any?
+      true
+    else
+      false
+    end
+  end
+
 end

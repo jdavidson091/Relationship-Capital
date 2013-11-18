@@ -5,7 +5,7 @@ class CommitmentsController < ApplicationController
     if @commitment.save
       @commitment.update_attribute(:active_user_id, @user.id)
       @commitment.update_attribute(:date_made, Time.now)
-      @commitment.update_attribute(:status, "In Progress")
+      @commitment.update_attribute(:status, "Pending")
       flash[:success] = "New Commitment Created"
       render 'users/home'
     else

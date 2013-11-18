@@ -17,26 +17,24 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>20 Nov 2013</td>
-          <td>15</td>
-          <td>John Calvin</td>
-          <td><%= @user.name %></td>
-          <td>Bring TPS reports</td>
-          <td>1 Nov 2013</td>
-          <td><button class='btn btn-small btn-primary'>Accept</button></td>
-          <td><button class='btn btn-small btn-danger'>Decline</button></td>
-        </tr>
-        <tr>
-          <td>20 Nov 2013</td>
-          <td>5</td>
-          <td>Jane Doe</td>
-          <td><%= @user.name %></td>
-          <td>Fill out Layout</td>
-          <td>1 Nov 2013</td>
-          <td><button class='btn btn-small btn-primary'>Accept</button></td>
-          <td><button class='btn btn-small btn-danger'>Decline</button></td>
-        </tr>
+        <% Commitment.where("(active_user_id = ? OR overseer_user_id = ?)
+                         AND active_user_id IS NOT NULL
+                         AND overseer_user_id IS NOT NULL
+                         AND status = ?",
+                         @user.id, @user.id, "Pending").find_each do |user_commitment| %>
+          <% supervisor = User.where(id: user_commitment.overseer_user_id).first! %>
+          <% active_user = User.where(id: user_commitment.active_user_id).first! %>
+          <tr>
+            <td><%= user_commitment.date_end %></td>
+            <td><%= user_commitment.score_weight %></td>
+            <td><%= supervisor.name %></td>
+            <td><%= active_user.name %></td>
+            <td><%= user_commitment.description %></td>
+            <td><%= user_commitment.date_made %></td>
+            <td><button class='btn btn-small btn-primary'>Accept</button></td>
+            <td><button class='btn btn-small btn-danger'>Decline</button></td>
+          </tr>
+        <% end %>
         </tbody>
       </table>
     </section>
