@@ -12,7 +12,7 @@
         <th>Status</th>
         <th>End Date</th>
         <th>Point Value</th>
-        <th>Overseer User</th>
+        <th>Supervisor User</th>
         <th>Active User</th>
         <th>Description</th>
         <th>Date Created</th>
@@ -20,36 +20,29 @@
       </tr>
     </thead>
     <tbody>
+
+    <% Commitment.where("(active_user_id = ? OR overseer_user_id = ?)
+                         AND active_user_id IS NOT NULL
+                         AND overseer_user_id IS NOT NULL",
+                        @user.id, @user.id).find_each do |user_commitment| %>
+      <% supervisor = User.where(id: user_commitment.overseer_user_id).first! %>
+      <% active_user = User.where(id: user_commitment.active_user_id).first! %>
       <tr>
-        <td>Pending acceptance</td>
-        <td>20 Nov 2013</td>
-        <td>15</td>
-        <td>John Calvin</td>
-        <td><%= @user.name %></td>
-        <td>Bring TPS reports</td>
-        <td>1 Nov 2013</td>
-        <td><%= link_to "Edit", '/edit_commitment' %></td>
+        <td><%= user_commitment.status %></td>
+        <td><%= user_commitment.date_end %></td>
+        <td><%= user_commitment.score_weight %></td>
+        <td><%= supervisor.name %></td>
+        <td><%= active_user.name %></td>
+        <td><%= user_commitment.description %></td>
+        <td><%= user_commitment.date_end %></td>
+        <% if user_commitment.status != "complete" %>
+          <td><%= link_to "Edit", '/edit_commitment' %></td>
+        <% else %>
+          <td><%= link_to "Complete - Leave Feedback", '/commitment_feedback' %></td>
+        <% end %>
       </tr>
-      <tr>
-        <td>In Progress</td>
-        <td>10 Nov 2013</td>
-        <td>25</td>
-        <td>Thomas Hobbes</td>
-        <td><%= @user.name %></td>
-        <td>2nd Deliverable, TPS Project</td>
-        <td>25 Oct 2013</td>
-        <td><%= link_to "Edit", '/edit_commitment' %></td>
-      </tr>
-      <tr>
-        <td>Completed Successfully!</td>
-        <td>20 Oct 2013</td>
-        <td>5</td>
-        <td>Franz Kafka</td>
-        <td><%= @user.name %></td>
-        <td>Bring expresso!</td>
-        <td>19 Oct 2013</td>
-        <td><%= link_to "Complete - Leave Feedback", '/commitment_feedback' %></td>
-      </tr>
+    <% end %>
+
     </tbody>
   </table>
 </div>

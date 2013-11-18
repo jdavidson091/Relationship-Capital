@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   # Make it so that if the user is signed in, render the homepage.
   def show
     @user = User.find(params[:id])
+    #@commitments = Commitment.find_all_by_active_user_id(@user.id)
+    @commitments = Commitment.where(active_user_id: @user.id)
 
     if self.current_user == @user
       render 'home'
