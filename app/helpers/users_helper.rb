@@ -6,6 +6,14 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
 
+  def is_admin?
+    if @user.admin == true
+      true
+    else
+      false
+    end
+  end
+
   def has_notifications?
     if Commitment.where("(active_user_id = ? OR overseer_user_id = ?)
                          AND active_user_id IS NOT NULL

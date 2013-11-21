@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.update_attribute(:rc_score, 0)
+      @user.update_attribute(:admin, false)
 
       sign_in @user
       flash[:success] = "Welcome to the application. Enjoy!"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028220932) do
+ActiveRecord::Schema.define(version: 20131121024220) do
 
   create_table "commitments", force: true do |t|
     t.integer  "active_user_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20131028220932) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.integer  "rc_score"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
