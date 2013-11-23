@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  #before the user can access the settings or update methods, they
+  # must be signed in.
+  before_action :signed_in_user, only: [:settings, :update]
 
   # default controller method that's called when
   # redirect to @user.
@@ -36,7 +39,19 @@ class UsersController < ApplicationController
   end
 
   def settings
+    #@user = current_user
     @user = current_user
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      #handles a successful update
+      flash[:success] = "Profile updated"
+      redirect_to @user
+    else
+      render 'settings'
+    end
   end
 
   def notifications
@@ -69,6 +84,10 @@ class UsersController < ApplicationController
   def all_params
     params.require(:user).permit(:name, :email, :password,
                                  :rc_score)
+  end
+
+  def signed_in_user
+    redirect_to signin_url, notice: "To access this page, please sign in!" unless signed_in?
   end
 
 end

@@ -1,24 +1,27 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, "Edit user") %>
+<h1>Update your profile</h1>
+
 <div class="row">
-  <aside class="span7">
-   <h1>User settings for <%= @user.name %></h1>
-  </aside>
-</div>
-<div class="row">
-  <label> Update Password: </label>
-  <input type="text" class = "span4" placeholder = "Current Password"/>
-  <input type="text" class = "span4" placeholder = "New Password"/>
-  <input type="text" class = "span4" placeholder = "New Password Confirmation"/>
-</div>
-<div class="row">
-  <label> Update Email: </label>
-  <input type="text" class = "span4" placeholder = "Current Email"/>
-  <input type="text" class = "span4" placeholder = "New Email"/>
-</div>
-<div class="row">
-  <button class="btn btn-primary">Update User Information</button>
-</div>
-<br>   <br>
-<div class="row">
-  <button class="btn btn-danger">Delete Profile</button>
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+    <%= gravatar_for @user %>
+    <a href="http://gravatar.com/emails">change</a>
+  </div>
 </div>
