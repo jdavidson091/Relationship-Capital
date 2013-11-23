@@ -20,8 +20,9 @@
         <% Commitment.where("(active_user_id = ? OR overseer_user_id = ?)
                          AND active_user_id IS NOT NULL
                          AND overseer_user_id IS NOT NULL
+                         AND creator_id != ?
                          AND status = ?",
-                         @user.id, @user.id, "Pending").find_each do |user_commitment| %>
+                         @user.id, @user.id, @user.id, "Pending").find_each do |user_commitment| %>
           <% supervisor = User.where(id: user_commitment.overseer_user_id).first! %>
           <% active_user = User.where(id: user_commitment.active_user_id).first! %>
           <tr>

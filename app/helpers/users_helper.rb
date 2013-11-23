@@ -18,7 +18,8 @@ module UsersHelper
     if Commitment.where("(active_user_id = ? OR overseer_user_id = ?)
                          AND active_user_id IS NOT NULL
                          AND overseer_user_id IS NOT NULL
-                         AND status = ?", @user.id, @user.id, "Pending").any?
+                         AND creator_id != ?
+                         AND status = ?", @user.id, @user.id, @user.id, "Pending").any?
       true
     else
       false

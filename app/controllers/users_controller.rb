@@ -75,6 +75,13 @@ class UsersController < ApplicationController
     @score_weights = [5, 10, 15, 20 ]
   end
 
+  #destroy the user...
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted."
+    redirect_to users_url
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :password,
