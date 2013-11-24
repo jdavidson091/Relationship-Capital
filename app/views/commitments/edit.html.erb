@@ -8,8 +8,12 @@
     <section>
       <row><h4>Active User: <%= @activeUser.name %></h4></row>
       <row><h4>Supervisor: <%= @supervisorUser.name %></h4></row>
+      <row><h4>Date end: <%= @commitment.date_end.month %>/<%= @commitment.date_end.day %>
+                             /<%= @commitment.date_end.year %></h4></row>
+      <row><h4>Supervisor: <%= @supervisorUser.name %></h4></row>
     </section>
     <section>
+    <% if @user.id == @supervisorUser.id %>
       <%= form_for(@commitment) do |f| %>
         <%= render 'shared/error_messages' %>
 
@@ -20,9 +24,27 @@
         <%= f.date_select :date_end, start_year: Time.now.year,
                           prompt: { day: @commitment.date_end.day, month: @commitment.date_end.month,
                                     year: @commitment.date_end.year }%>
-
+        <section>
+          <row>
         <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
       <% end %>
+      <%= link_to "Delete this commitment", @commitment, method: :delete,
+                  data: { confirm: "Are you sure you want to delete this commitment?" },
+                  title: @commitment.id,
+                  class: "btn btn-large btn-danger" %>
+        </row>
+      </section>
+      <section>
+        <row><h1>Has the active user fulfilled the commitment yet?</h1></row>
+        <row><%= link_to "Yes! It has been fulfilled!", commitment_fulfilled_path(id: @commitment.id),
+                         class: "btn btn-large btn-warning"%></row>
+      </section>
+    <% else %>
+      <row><h1>You aren't the supervisor on this commitment.</h1></row>
+    <% end %>
+    </section>
+    <section>
+      <%= link_to "Go back", root_path, class: "btn" %>
     </section>
   </aside>
 </div>

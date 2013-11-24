@@ -27,6 +27,18 @@ class CommitmentsController < ApplicationController
     redirect_to notifications_path
   end
 
+  def fulfilled
+    @commitment = Commitment.find(params[:id])
+    @user = current_user
+    if @user.id == @commitment.overseer_user_id
+      @commitment.update_attribute(:status, "Awaiting Feedback")
+      flash[:success] = "Commitment has been completed! Awaiting feedback."
+    else
+      flash[:error] = "You aren't the supervisor for this commitment - action not allowed."
+    end
+    redirect_to root_path
+  end
+
   def update
     @commitment = Commitment.find(params[:id])
     if @commitment.update_attributes(commitment_params)
@@ -39,6 +51,7 @@ class CommitmentsController < ApplicationController
   end
 
   def feedback
+    @user = current_user
   end
 
   def edit
@@ -60,6 +73,5 @@ class CommitmentsController < ApplicationController
     params.require(:commitment).permit(:overseer_user_id, :description,
                                        :active_user_id, :status, :date_made, :date_end, :score_weight)
   end
-
 
 end

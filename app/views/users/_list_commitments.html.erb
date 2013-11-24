@@ -30,16 +30,20 @@
       <% active_user = User.where(id: user_commitment.active_user_id).first! %>
       <tr>
         <td><%= user_commitment.status %></td>
-        <td><%= user_commitment.date_end %></td>
+        <td><%= user_commitment.date_end.month %>/<%= user_commitment.date_end.day %>/<%= user_commitment.date_end.year %></td>
         <td><%= user_commitment.score_weight %></td>
         <td><%= supervisor.name %></td>
         <td><%= active_user.name %></td>
         <td><%= user_commitment.description %></td>
-        <td><%= user_commitment.date_made %></td>
-        <% if user_commitment.status != "complete" %>
-          <td><%= link_to "Edit", edit_commitment_path(user_commitment) %></td>
+        <td><%= user_commitment.date_made.month %>/<%= user_commitment.date_made.day %>/<%= user_commitment.date_made.year %></td>
+        <% if user_commitment.status != "Complete"%>
+          <% if user_commitment.status != "Awaiting Feedback"  %>
+            <td><%= link_to "Edit", edit_commitment_path(user_commitment) %></td>
+          <% else %>
+            <td><%= link_to "Complete - Leave Feedback", '/commitment_feedback' %></td>
+          <% end %>
         <% else %>
-          <td><%= link_to "Complete - Leave Feedback", '/commitment_feedback' %></td>
+            <td> Feedback submitted. </td>
         <% end %>
       </tr>
     <% end %>
