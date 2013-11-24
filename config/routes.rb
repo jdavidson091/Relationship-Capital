@@ -1,18 +1,22 @@
 RelationshipCapital::Application.routes.draw do
 
   resources :users
-  resources :commitments
+  resources :commitments do
+    collection do
+      get :accept
+    end
+  end
   resources :sessions, only: [:new, :create, :destroy]
   root 'home_pages#home'
   match '/leaderboard', to: 'users#leaderboard', via: 'get'
   match '/edit_commitment', to: 'commitments#edit', via: 'get'
+  match '/commitment_accept', to: 'commitments#accept', via: 'get'
   match '/commitment_feedback', to: 'commitments#feedback', via: 'get'
   match '/commitments', to: 'home_pages#home', via: 'get'
   match '/home', to: 'home_pages#home', via: 'get'
   match '/help', to: 'home_pages#help', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
   match '/settings', to: 'users#settings', via: 'get'
-  #match '/new_commitment', to: 'users#new_commitment', via: 'get'
   match '/admin', to: 'users#admin_home', via: 'get'
   match '/notifications', to: 'users#notifications', via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'

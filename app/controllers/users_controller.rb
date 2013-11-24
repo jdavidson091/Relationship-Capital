@@ -68,15 +68,6 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-=begin
-  #maybe we should put this in the commitments controller...
-  def new_commitment
-    @commitment = Commitment.new
-    @user = current_user
-    @score_weights = [5, 10, 15, 20 ]
-  end
-=end
-
   #destroy the user...
   def destroy
     User.find(params[:id]).destroy

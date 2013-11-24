@@ -3,7 +3,6 @@ class CommitmentsController < ApplicationController
     @commitment = Commitment.new(commitment_params)
     @user = current_user
     if @commitment.save
-      #@commitment.update_attribute(:active_user_id, @user.id)
       @commitment.update_attribute(:creator_id, @user.id)
       @commitment.update_attribute(:date_made, Time.now)
       @commitment.update_attribute(:status, "Pending")
@@ -14,7 +13,6 @@ class CommitmentsController < ApplicationController
     end
   end
 
-  #maybe we should put this in the commitments controller...
   def new
     @currentUserRole = params[:role]
     @commitment = Commitment.new
@@ -22,8 +20,14 @@ class CommitmentsController < ApplicationController
     @score_weights = [5, 10, 15, 20 ]
   end
 
+  def accept
+    @commitment = Commitment.find(params[:id])
+    @commitment.update_attribute(:status, "In Progress")
+    flash[:success] = "Commitment Accepted!"
+    redirect_to notifications_path
+  end
   def update
-    redirect_to 'users/notifications'
+    #redirect_to 'users/notifications'
   end
 
   def feedback
