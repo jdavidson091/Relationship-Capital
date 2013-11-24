@@ -12,7 +12,7 @@ RelationshipCapital::Application.routes.draw do
   match '/help', to: 'home_pages#help', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
   match '/settings', to: 'users#settings', via: 'get'
-  match '/new_commitment', to: 'users#new_commitment', via: 'get'
+  #match '/new_commitment', to: 'users#new_commitment', via: 'get'
   match '/admin', to: 'users#admin_home', via: 'get'
   match '/notifications', to: 'users#notifications', via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'

@@ -1,0 +1,42 @@
+<% provide(:title, 'Create New Commitment') %>
+<% if @currentUserRole == "Active" %>
+  <h1>Request a New Commitment</h1>
+  <h2>Select your supervisor and make them a commitment you'll keep.
+  </h2>
+<% else @currentUserRole == "Supervisor" %>
+  <h1>Assign a New Commitment</h1>
+  <h2>Select a user you supervise and assign them a commitment to keep.
+  </h2>
+<% end %>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@commitment) do |f| %>
+      <%= render 'shared/commitment_error_messages' %>
+
+      <% if @currentUserRole == "Active" %>
+        <%= f.label "Who is the supervisor?" %>
+        <%= f.collection_select :overseer_user_id, User.all,:id, :name %>
+        <%= f.hidden_field :active_user_id, :value => @user.id %>
+
+      <% else @currentUserRole == "Supervisor" %>
+        <%= f.label "Who will carry out this commitment?" %>
+        <%= f.collection_select :active_user_id, User.all, :id, :name %>
+        <%= f.hidden_field :overseer_user_id, :value => @user.id %>
+      <% end %>
+
+      <%= f.label "Description of the Commitment: " %>
+      <%= f.text_field :description %>
+
+      <%= f.label "Pick an end date:" %>
+      <%= f.date_select :date_end, start_year: Time.now.year,
+                        prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }%>
+
+      <%= f.label "Give the commitment a weight:" %>
+      <%= f.select :score_weight, options_for_select([ 5, 10, 15, 20]) %>
+
+      <%= f.submit "Create Commitment", class: "btn btn-large btn-primary" %>
+
+    <% end %>
+  </div>
+</div>

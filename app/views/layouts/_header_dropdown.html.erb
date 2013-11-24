@@ -14,3 +14,13 @@
     </li>
   </ul>
 </li>
+
+<li id="header_menu" class="dropdown">
+  <a href="#" class="dropdown-toggle header_menu" data-toggle="dropdown">
+    New Commitment <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li><%= link_to "Assign a Commitment", new_commitment_path(role: "Supervisor") %></li>
+    <li><%= link_to "Request a Commitment", new_commitment_path(role: "Active") %></li>
+  </ul>
+</li>
