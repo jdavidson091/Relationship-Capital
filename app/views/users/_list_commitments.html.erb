@@ -37,7 +37,7 @@
         <td><%= user_commitment.description %></td>
         <td><%= user_commitment.date_made %></td>
         <% if user_commitment.status != "complete" %>
-          <td><%= link_to "Edit", '/edit_commitment' %></td>
+          <td><%= link_to "Edit", edit_commitment_path(user_commitment) %></td>
         <% else %>
           <td><%= link_to "Complete - Leave Feedback", '/commitment_feedback' %></td>
         <% end %>

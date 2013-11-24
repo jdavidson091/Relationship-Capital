@@ -1,2 +1,28 @@
 <% provide(:title, "Edit Commitment") %>
-<h1>Edit Commitment</h1>
+
+<div class="row">
+  <aside class="span12">
+    <section>
+      <h3>Edit Commitment:</h3>
+    </section>
+    <section>
+      <row><h4>Active User: <%= @activeUser.name %></h4></row>
+      <row><h4>Supervisor: <%= @supervisorUser.name %></h4></row>
+    </section>
+    <section>
+      <%= form_for(@commitment) do |f| %>
+        <%= render 'shared/error_messages' %>
+
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+
+        <%= f.label "Update the end date:" %>
+        <%= f.date_select :date_end, start_year: Time.now.year,
+                          prompt: { day: @commitment.date_end.day, month: @commitment.date_end.month,
+                                    year: @commitment.date_end.year }%>
+
+        <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </section>
+  </aside>
+</div>

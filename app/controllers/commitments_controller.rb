@@ -26,14 +26,26 @@ class CommitmentsController < ApplicationController
     flash[:success] = "Commitment Accepted!"
     redirect_to notifications_path
   end
+
   def update
-    #redirect_to 'users/notifications'
+    @commitment = Commitment.find(params[:id])
+    if @commitment.update_attributes(commitment_params)
+      #handles a successful update
+      flash[:success] = "Commitment updated."
+      redirect_to root_path
+    else
+      render 'settings'
+    end
   end
 
   def feedback
   end
 
   def edit
+    @user = current_user
+    @commitment = Commitment.find(params[:id])
+    @activeUser = User.find(@commitment.active_user_id)
+    @supervisorUser = User.find(@commitment.overseer_user_id)
   end
 
   def destroy
