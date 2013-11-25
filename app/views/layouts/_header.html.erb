@@ -19,9 +19,9 @@
             <li><%= link_to "Admin Page", admin_path %></li>
           <% end %>
           <% if has_notifications? %>
-            <li><%= link_to "HASNotifications", notifications_path %></li>
+            <li><%= link_to "New Notifications!", notifications_path, class: "btn btn-small btn-danger" %></li>
           <% else %>
-            <li><%= link_to "NoNotifications", notifications_path %></li>
+            <li><%= link_to "Notifications", notifications_path %></li>
           <% end %>
         <% end %>
         <div class="col-sm-3 col-md-3 pull-right">
