@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125004704) do
+ActiveRecord::Schema.define(version: 20131125060154) do
 
   create_table "commitments", force: true do |t|
     t.integer  "active_user_id"
@@ -26,6 +26,10 @@ ActiveRecord::Schema.define(version: 20131125004704) do
     t.integer  "creator_id"
     t.string   "perception_comment"
     t.integer  "perception_score"
+    t.string   "perception_active_comment"
+    t.integer  "perception_active_score"
+    t.string   "perception_supervisor_comment"
+    t.integer  "perception_supervisor_score"
   end
 
   create_table "users", force: true do |t|

@@ -6,8 +6,10 @@ class CommitmentsController < ApplicationController
       @commitment.update_attribute(:creator_id, @user.id)
       @commitment.update_attribute(:date_made, Time.now)
       @commitment.update_attribute(:status, "Pending")
-      @commitment.update_attribute(:perception_score, 0)
-      @commitment.update_attribute(:perception_comment, "")
+      @commitment.update_attribute(:perception_active_score, 0)
+      @commitment.update_attribute(:perception_active_comment, "")
+      @commitment.update_attribute(:perception_supervisor_score, 0)
+      @commitment.update_attribute(:perception_supervisor_comment, "")
       flash[:success] = "New Commitment Request Created."
       render 'users/home'
     else
@@ -19,7 +21,7 @@ class CommitmentsController < ApplicationController
     @currentUserRole = params[:role]
     @commitment = Commitment.new
     @user = current_user
-    @score_weights = [5, 10, 15, 20 ]
+    @score_weights = [10, 20, 30, 40 ]
   end
 
   def accept
@@ -46,14 +48,17 @@ class CommitmentsController < ApplicationController
 
     if @commitment.update_attributes(commitment_params)
       #handles a successful update
-      if @commitment.perception_score != 0
-        @commitment.update_attribute(:status, "Completed")
+      if @commitment.perception_active_score != 0
+        if @commitment.perception_supervisor_score != 0
+          #update the status to "Completed"
+          @commitment.update_attribute(:status, "Completed")
+          flash[:success] = "Commitment feedback submitted!"
 
+          #increase the RC score of both the active user and supervisor
+          increase_score(@commitment.active_user_id, @commitment.score_weight)
+          increase_score(@commitment.overseer_user_id, @commitment.score_weight)
 
-
-
-        flash[:success] = "Commitment feedback submitted!"
-
+        end
         redirect_to root_path
       else
         flash[:success] = "Commitment updated."
@@ -64,10 +69,19 @@ class CommitmentsController < ApplicationController
     end
   end
 
+  def increase_score (id, score)
+    @user = User.find(id)
+    @score = score
+    @score = @score + @user.rc_score
+    @user.update_attribute(:rc_score, @score)
+    flash[:success] = "Updated RC Score"
+  end
+
   def feedback
     @user = current_user
     @commitment = Commitment.find(params[:id])
     @activeUser = User.find(@commitment.active_user_id)
+    @supervisorUser = User.find(@commitment.overseer_user_id)
   end
 
   def submit_feedback
@@ -107,7 +121,8 @@ class CommitmentsController < ApplicationController
   def commitment_params
     params.require(:commitment).permit(:overseer_user_id, :description,
                                        :active_user_id, :status, :date_made, :date_end,
-                                       :perception_comment, :perception_score, :score_weight)
+                                       :perception_active_comment, :perception_active_score,
+                                       :perception_supervisor_comment, :perception_supervisor_score, :score_weight)
   end
 
 end

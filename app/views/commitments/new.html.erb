@@ -33,7 +33,7 @@
                         prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }%>
 
       <%= f.label "Give the commitment a weight:" %>
-      <%= f.select :score_weight, options_for_select([ 5, 10, 15, 20]) %>
+      <%= f.select :score_weight, options_for_select([ 10, 20, 30, 40]) %>
 
       <%= f.submit "Create Commitment", class: "btn btn-large btn-primary" %>
 

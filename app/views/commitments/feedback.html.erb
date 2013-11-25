@@ -5,19 +5,31 @@
     <% if @commitment.status == "Awaiting Feedback"%>
       <% if @user.id == @commitment.overseer_user_id %>
 
-      <%= form_for(@commitment) do |f| %>
+        <%= form_for(@commitment) do |f| %>
         <%= render 'shared/commitment_error_messages' %>
 
         <row><h4>From Positive (10) to Negative (1), how would you rank <%= @activeUser.name
             %>'s performance?</h4></row>
-        <row><%= f.select :perception_score, options_for_select([10,9,8,7,6,5,4,3,2,1]) %></row>
+        <row><%= f.select :perception_active_score, options_for_select([10,9,8,7,6,5,4,3,2,1]) %></row>
 
         <row><%= f.label "Any comments related to their performance?" %></row>
-        <row><%= f.text_area :perception_comment, class: "span6" %></row>
+        <row><%= f.text_area :perception_active_comment, class: "span6" %></row>
         <row><%= f.submit "Submit Feedback", value: "Completed", class: "btn btn-large btn-primary" %></row>
-
+        <% end %>
       <% end %>
+      <% if @user.id == @commitment.active_user_id %>
 
+        <%= form_for(@commitment) do |f| %>
+          <%= render 'shared/commitment_error_messages' %>
+
+          <row><h4>From Positive (10) to Negative (1), how would you rank <%= @supervisorUser.name
+          %>'s instruction and supervision?</h4></row>
+          <row><%= f.select :perception_supervisor_score, options_for_select([10,9,8,7,6,5,4,3,2,1]) %></row>
+
+          <row><%= f.label "Any comments related to their supervision?" %></row>
+          <row><%= f.text_area :perception_supervisor_comment, class: "span6" %></row>
+          <row><%= f.submit "Submit Feedback", value: "Completed", class: "btn btn-large btn-primary" %></row>
+        <% end %>
       <% end %>
     <% end %>
     </aside>

@@ -38,10 +38,20 @@
         <td><%= user_commitment.date_made.month %>/<%= user_commitment.date_made.day %>/<%= user_commitment.date_made.year %></td>
         <% if user_commitment.status != "Completed"%>
           <% if user_commitment.status == "Awaiting Feedback"  %>
+
             <% if @user.id == user_commitment.overseer_user_id %>
-              <td><%= link_to "Almost done - Leave Feedback", commitment_feedback_path(id: user_commitment.id) %></td>
-            <% else %>
-              <td>Waiting for Supervisor feedback</td>
+              <% if user_commitment.perception_active_score == 0 %>
+                <td><%= link_to "Almost done - Leave Feedback for ActiveUser", commitment_feedback_path(id: user_commitment.id) %></td>
+              <% else %>
+                <td>Waiting for <%= active_user.name %>'s feedback</td>
+              <% end %>
+            <% end %>
+            <% if @user.id == user_commitment.active_user_id %>
+              <% if user_commitment.perception_supervisor_score == 0 %>
+                <td><%= link_to "Almost done - Leave Feedback for the Supervisor", commitment_feedback_path(id: user_commitment.id) %></td>
+              <% else %>
+                <td>Waiting for <%= supervisor.name %>'s feedback</td>
+              <% end %>
             <% end %>
           <% else %>
             <td><%= link_to "Edit", edit_commitment_path(user_commitment) %></td>
