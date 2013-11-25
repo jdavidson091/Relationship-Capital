@@ -8,9 +8,7 @@
     <section>
       <row><h4>Active User: <%= @activeUser.name %></h4></row>
       <row><h4>Supervisor: <%= @supervisorUser.name %></h4></row>
-      <row><h4>Date end: <%= @commitment.date_end.month %>/<%= @commitment.date_end.day %>
-                             /<%= @commitment.date_end.year %></h4></row>
-      <row><h4>Supervisor: <%= @supervisorUser.name %></h4></row>
+      <row><h4>Date end: <%= @commitment.date_end.month %>/<%= @commitment.date_end.day %>/<%= @commitment.date_end.year %></h4></row>
     </section>
     <section>
     <% if @user.id == @supervisorUser.id %>

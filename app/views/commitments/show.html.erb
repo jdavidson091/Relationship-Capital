@@ -1,0 +1,25 @@
+<% provide(:title, "Show Commitment") %>
+
+<div class="row">
+  <aside class="span12">
+    <section>
+      <h3>Commitment Details:</h3>
+    </section>
+    <section>
+      <row><h4>Active User: <%= @activeUser.name %></h4></row>
+      <row><h4>Supervisor: <%= @supervisorUser.name %></h4></row>
+      <row><h4>Date end: <%= @commitment.date_end.month %>/<%= @commitment.date_end.day %>/<%= @commitment.date_end.year %></h4></row>
+    </section>
+    <% if @commitment.status == "Completed" %>
+      <section>
+        <row><h5>Perception Score: <%= @commitment.perception_score %></h5></row>
+        <row><h5>Perception comments:</h5></row>
+        <row><p><%= @commitment.perception_comment %></p></row>
+      </section>
+    <% end %>
+    <section>
+      <%= link_to "Go back", root_path, class: "btn" %>
+    </section>
+
+  </aside>
+</div>

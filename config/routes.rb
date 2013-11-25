@@ -8,8 +8,10 @@ RelationshipCapital::Application.routes.draw do
   match '/edit_commitment', to: 'commitments#edit', via: 'get'
   match '/commitment_accept', to: 'commitments#accept', via: 'get'
   match '/commitment_fulfilled', to: 'commitments#fulfilled', via: 'get'
+  match '/commitment_show', to: 'commitments#show', via: 'get'
   match '/commitment_feedback', to: 'commitments#feedback', via: 'get'
   match '/commitments', to: 'home_pages#home', via: 'get'
+  match '/submit_feedback', to: 'commitments#submit_feedback', via: [:get, :post]
   match '/home', to: 'home_pages#home', via: 'get'
   match '/help', to: 'home_pages#help', via: 'get'
   match '/signup', to: 'users#new', via: 'get'

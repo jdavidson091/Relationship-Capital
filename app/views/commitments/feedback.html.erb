@@ -1,24 +1,25 @@
 <% provide(:title, "Commitment Feedback") %>
 <div class="row">
-  <aside class="span8">
-  <section>
-    <h1>Feedback for commitment:</h1>
-  </section>
-  <section>
-    <h2>From Negative to positive, how would you rank the Active User?</h2>
-  </section>
-  <section>
-    <label>1 - 10 </label>
-    <input type="text" class = "span4" placeholder = ""/>
-  </section>
-  <section>
-    <h2>Any comments related to their performance?</h2>
-  </section>
-  <section>
-    <textarea class="span 6"></textarea>
-  </section>
-  <section>
-    <button class="btn btn-large btn-success">Submit Feedback</button>
-  </section>
-  </aside>
+  <div class="span6 offset3">
+    <aside>
+    <% if @commitment.status == "Awaiting Feedback"%>
+      <% if @user.id == @commitment.overseer_user_id %>
+
+      <%= form_for(@commitment) do |f| %>
+        <%= render 'shared/commitment_error_messages' %>
+
+        <row><h4>From Positive (10) to Negative (1), how would you rank <%= @activeUser.name
+            %>'s performance?</h4></row>
+        <row><%= f.select :perception_score, options_for_select([10,9,8,7,6,5,4,3,2,1]) %></row>
+
+        <row><%= f.label "Any comments related to their performance?" %></row>
+        <row><%= f.text_area :perception_comment, class: "span6" %></row>
+        <row><%= f.submit "Submit Feedback", value: "Completed", class: "btn btn-large btn-primary" %></row>
+
+      <% end %>
+
+      <% end %>
+    <% end %>
+    </aside>
+  </div>
 </div>

@@ -36,14 +36,18 @@
         <td><%= active_user.name %></td>
         <td><%= user_commitment.description %></td>
         <td><%= user_commitment.date_made.month %>/<%= user_commitment.date_made.day %>/<%= user_commitment.date_made.year %></td>
-        <% if user_commitment.status != "Complete"%>
-          <% if user_commitment.status != "Awaiting Feedback"  %>
-            <td><%= link_to "Edit", edit_commitment_path(user_commitment) %></td>
+        <% if user_commitment.status != "Completed"%>
+          <% if user_commitment.status == "Awaiting Feedback"  %>
+            <% if @user.id == user_commitment.overseer_user_id %>
+              <td><%= link_to "Almost done - Leave Feedback", commitment_feedback_path(id: user_commitment.id) %></td>
+            <% else %>
+              <td>Waiting for Supervisor feedback</td>
+            <% end %>
           <% else %>
-            <td><%= link_to "Complete - Leave Feedback", '/commitment_feedback' %></td>
+            <td><%= link_to "Edit", edit_commitment_path(user_commitment) %></td>
           <% end %>
         <% else %>
-            <td> Feedback submitted. </td>
+            <td> <%= link_to "Completed!", commitment_show_path(id: user_commitment.id) %> </td>
         <% end %>
       </tr>
     <% end %>
