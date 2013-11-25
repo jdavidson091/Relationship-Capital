@@ -18,7 +18,11 @@
     </section>
     <section>
       <h1>Reputation:</h1>
-      <% @repPercent = 100 * (@user.perception_score.to_f/@user.rc_score.to_f) %>
+      <% if @user.rc_score == 0 %>
+        <% @repPercent = 0 %>
+      <% else %>
+        <% @repPercent = 100 * (@user.perception_score.to_f/@user.rc_score.to_f) %>
+      <% end %>
       <h2><%= @repPercent.to_int %>%</h2>
     </section>
     <section>

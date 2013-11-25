@@ -3,6 +3,7 @@
 
 <div class="row">
   <div class="span6 offset3">
+    <section>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
@@ -20,8 +21,17 @@
 
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
-
+    </section>
+    <section>
     <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">change</a>
+    <a href="http://gravatar.com/emails">change picture through Gravatar</a>
+    </section>
+    <br> <br>
+    <section>
+      <%= link_to "Delete your profile", @user, method: :delete,
+                data: { confirm: "Are you SURE you want to delete your profile? We'll miss you!" },
+                title: @user.id,
+                class: "btn btn-small btn-danger" %>
+    </section>
   </div>
 </div>

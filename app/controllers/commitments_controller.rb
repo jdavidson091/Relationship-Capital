@@ -119,7 +119,6 @@ class CommitmentsController < ApplicationController
     @commitment = Commitment.find(params[:id])
     @commitment.destroy
     redirect_to notifications_path
-
   end
 
   private
