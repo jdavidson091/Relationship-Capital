@@ -13,8 +13,13 @@
       <h2><%= @user.rc_score %></h2>
     </section>
     <section>
+      <h1>Perception Points:</h1>
+      <h2><%= @user.perception_score %></h2>
+    </section>
+    <section>
       <h1>Reputation:</h1>
-      <h2>75%</h2>
+      <% @repPercent = 100 * (@user.perception_score.to_f/@user.rc_score.to_f) %>
+      <h2><%= @repPercent.to_int %>%</h2>
     </section>
     <section>
       <h1>Contacts:</h1>

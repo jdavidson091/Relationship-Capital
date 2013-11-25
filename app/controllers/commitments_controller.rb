@@ -55,8 +55,10 @@ class CommitmentsController < ApplicationController
           flash[:success] = "Commitment feedback submitted!"
 
           #increase the RC score of both the active user and supervisor
-          increase_score(@commitment.active_user_id, @commitment.score_weight)
-          increase_score(@commitment.overseer_user_id, @commitment.score_weight)
+          increase_score(@commitment.active_user_id, @commitment.score_weight,
+                         @commitment.perception_active_score)
+          increase_score(@commitment.overseer_user_id, @commitment.score_weight,
+                         @commitment.perception_supervisor_score)
 
         end
         redirect_to root_path
@@ -69,12 +71,15 @@ class CommitmentsController < ApplicationController
     end
   end
 
-  def increase_score (id, score)
+  def increase_score (id, score, perceptionScore)
     @user = User.find(id)
     @score = score
+    @perceptionScore = perceptionScore * (@score/10)
     @score = @score + @user.rc_score
+    @perceptionScore = @perceptionScore + @user.perception_score
     @user.update_attribute(:rc_score, @score)
-    flash[:success] = "Updated RC Score"
+    @user.update_attribute(:perception_score, @perceptionScore)
+    flash[:success] = "Updated RC Score and Perception Score"
   end
 
   def feedback
